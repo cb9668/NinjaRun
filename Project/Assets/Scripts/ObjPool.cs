@@ -104,10 +104,7 @@ public class ObjPool : MonoBehaviour
         {
             timeSinceLastSpawned = 0f;
 
-            //Set a random y position for the column
-            //float spawnYPosition = Random.Range(MinY, MaxY);
 
-            //...then set the current column to that position.
             StartCoroutine(MoveLinear(pool[currentObj], speed));
 
             if (pool[currentObj].name.StartsWith("Tree"))
@@ -131,12 +128,7 @@ public class ObjPool : MonoBehaviour
                 currentObj = 0;
             }
 
-
-
-
             enemyPool[currentEnemy].GetComponent<Rigidbody2D>().AddForce(new Vector2(-100f, 0), ForceMode2D.Force);  //fly across screen
-
-            //StartCoroutine(MoveLinear(enemyPool[currentEnemy], enemySpeed));
 
             currentEnemy++;
 

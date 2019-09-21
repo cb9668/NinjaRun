@@ -19,7 +19,6 @@ public class Player : MonoBehaviour {
 
     public AudioClip jumpSnd;
     public AudioClip deathSnd;
-    //public AudioClip enemySnd;
     public AudioClip collectibleSnd;
 
     public int lives;
@@ -49,8 +48,6 @@ public class Player : MonoBehaviour {
         scoreText = GameObject.Find("CurrentScoreText").GetComponent<Text>();
         livesText = GameObject.Find("LivesText").GetComponent<Text>();
 
-        //Start the object moving.
-        //rb2d.velocity = new Vector2(GameControl.instance.scrollSpeed, 0);
         moveSpeed = 0f;
         jumpSpeed = 40f;
         gravityMult = 5f;
@@ -79,34 +76,17 @@ public class Player : MonoBehaviour {
 
         if (Time.timeScale == 1)
         {
-            //// If the game is over, stop scrolling.
-            //if (GameControl.instance.gameOver == true)
-            //{
-            //    rb2d.velocity = Vector2.zero;
-            //}
-
-
-
+ 
             if (rb2d.velocity.y < 0)    
             {
                 // a heavier gravity when landing the jump to create a more crisp jump
                 rb2d.velocity += Vector2.up * Physics2D.gravity.y * rb2d.gravityScale * (gravityMult - 1) * Time.deltaTime;
-                //gameObject.layer = 11;
             }
-
-            //Debug.Log(rb2d.velocity);
-            //Debug.Log(rb2d.gravityScale);
 
             if (!RendererExtensions.IsVisibleFrom(gameObject.GetComponent<Renderer>(), main))
             {
                 GameOver();
             }
-
-
-            //if (Time.frameCount % 20 == 0 )
-            //{
-            //    score += 1;
-            //}
 
             scoreText.text = score.ToString();
             
@@ -218,11 +198,6 @@ public class Player : MonoBehaviour {
             SoundManager.instance.PlaySingleSound(clip, volume);
         }
     }
-
-    //private void OnBecameInvisible()
-    //{
-    //    GameOver();
-    //}
 
     private void GameOver()
     {

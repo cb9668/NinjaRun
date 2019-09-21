@@ -3,12 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-/// <summary>
-/// <para>Week 2 - Mobile Input</para>
-/// Example of Swiping to add Torque to a cube. Set the Angular drag on the Rigidbody to 1.
-/// <author>Rocco Briganti</author>
-/// </summary>
-
 public class SwipeScript : MonoBehaviour
 {
 	private const float MIN_SWIPE_LENGTH = 20f;
@@ -128,7 +122,7 @@ public class SwipeScript : MonoBehaviour
         //    hit = false;
         //}
 
-    }
+    
 
 	/// <summary>
 	/// This will simulate both directional and free swipe using the Left mouse button.

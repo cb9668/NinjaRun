@@ -84,22 +84,6 @@ public class DataManager : MonoBehaviour {
 
     }
 
-    //private int SetBool(bool pref)
-    //{
-    //    if (pref == true)
-    //        return 1;
-    //    else
-    //        return 0;
-    //}
-
-    //private bool SetInt(int pref)
-    //{
-    //    if (pref == 1)
-    //        return true;
-    //    else
-    //        return false;
-    //}
-
     public void SaveHighScore()
     {
         PlayerPrefs.SetFloat("highscore", GameManager.instance.highscore);
